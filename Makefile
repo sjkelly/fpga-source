@@ -1,6 +1,6 @@
 
 
-VERILOGDEFINES := lib/xtrx/xtrxll_regs.vh
+
 VERILOGFILES := $(wildcard lib/*/*.v)\
 				top/xtrxr5/xlnx_lms7_lml_phy.v\
 				top/xtrxr5/xlnx_pcie_clocking.v\
