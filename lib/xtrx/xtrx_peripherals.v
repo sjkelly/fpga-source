@@ -1286,7 +1286,7 @@ assign axis_rd_gtime_sec_valid = 1'b1;
 assign axis_rd_gtime_frac_valid = 1'b1;
 
 generate
-if (NO_PPS != 0) begin
+if (`NO_PPS != 0) begin
   assign axis_rd_onepps_data    = 0;
   assign axis_rd_onepps_valid   = 1'b1;
 
@@ -1337,7 +1337,7 @@ wire [31:0]axis_simtx_data  = gp_out[31:0];
 wire [2:0] axis_simctrl_data  = gp_out[2:0];
 
 generate
-if (NO_SMART_CARD != 0) begin
+if (`NO_SMART_CARD != 0) begin
   assign axis_rd_sim_rready = 1'b1;
 
   assign sim_uart_tx_interrupt_valid = 0;
@@ -1471,7 +1471,7 @@ ul_drp_cfg #(
 // Timed commands
 
 generate
-if (NO_GTIME != 0) begin
+if (`NO_GTIME != 0) begin
   assign st_ul_waddr = 0;
   assign st_ul_wdata = 0;
   assign st_ul_wvalid = 1'b0;

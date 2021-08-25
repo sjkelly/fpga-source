@@ -296,23 +296,23 @@ wire [RAM_RX_ADDR_W-1:3] rxdma_bram_addr;
 wire                     rxdma_bram_en;
 
 // 64kB, direct map
-blk_mem_gen_nrx fifo_mem_rx (
-    .clka(user_clk),
-    .rsta(user_reset),
-    .ena(rxdma_bram_en),
-    .wea(rxdma_bram_wbe),
-    .addra(rxdma_bram_addr),
-    .dina(rxdma_bram_data_wr),
-    .douta(rxdma_bram_data_rd),
-
-    .clkb(lms7_rx_clk),
-    .rstb(1'b0),
-    .enb(fe_rxdma_ten),
-    .web(8'hff),
-    .addrb(fe_rxdma_taddr),
-    .dinb(fe_rxdma_tdata_wr),
-    .doutb()
-);
+//blk_mem_gen_nrx fifo_mem_rx (
+//    .clka(user_clk),
+//    .rsta(user_reset),
+//    .ena(rxdma_bram_en),
+//    .wea(rxdma_bram_wbe),
+//    .addra(rxdma_bram_addr),
+//    .dina(rxdma_bram_data_wr),
+//    .douta(rxdma_bram_data_rd),
+//
+//    .clkb(lms7_rx_clk),
+//    .rstb(1'b0),
+//    .enb(fe_rxdma_ten),
+//    .web(8'hff),
+//    .addrb(fe_rxdma_taddr),
+//    .dinb(fe_rxdma_tdata_wr),
+//    .doutb()
+//);
 
 wire                     txdma_bram_en;
 wire [7:0]               txdma_bram_wbe;
@@ -353,24 +353,24 @@ wire [RAM_TX_ADDR_W-1:3] fe_txdma_taddr;
 wire [WIDTH_TX-1:0]      fe_txdma_tdata_rd;
 
 // 96kB of RAM mapped to 128kB space, 8b -> 6b on the fly translation
-blk_mem_gen_ntx fifo_mem_tx (
-    .clka(user_clk),
-    .rsta(user_reset),
-    .ena(txdma_bram_en),
-    .wea(txdma_bram_wbe_mapped),
-    .addra(txdma_bram_addr),
-    .dina(txdma_bram_data_wr_mapped),
-    .douta(txdma_bram_data_rd_mapped),
-
-    .clkb(lms7_tx_clk),
-    .rstb(1'b0),
-    .enb(fe_txdma_ten),
-    .web(6'h00),
-    .addrb(fe_txdma_taddr),
-    .dinb(0),
-    .doutb(fe_txdma_tdata_rd)
-);
-
+//blk_mem_gen_ntx fifo_mem_tx (
+//    .clka(user_clk),
+//    .rsta(user_reset),
+//    .ena(txdma_bram_en),
+//    .wea(txdma_bram_wbe_mapped),
+//    .addra(txdma_bram_addr),
+//    .dina(txdma_bram_data_wr_mapped),
+//    .douta(txdma_bram_data_rd_mapped),
+//
+//    .clkb(lms7_tx_clk),
+//    .rstb(1'b0),
+//    .enb(fe_txdma_ten),
+//    .web(6'h00),
+//    .addrb(fe_txdma_taddr),
+//    .dinb(0),
+//    .doutb(fe_txdma_tdata_rd)
+//);
+//
 ////////////////////////////////////////////////////////////////////////////////
 // RX DMA FE CONTROL
 //
